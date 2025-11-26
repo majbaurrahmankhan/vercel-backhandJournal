@@ -17,9 +17,12 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 
-
 // Use submission routes
 app.use('/api/submissions', submissionRoutes);
+
+app.get("/",(req,res)=>{
+    return res.send("Backhandis running")
+})
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
